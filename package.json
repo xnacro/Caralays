@@ -1,0 +1,23 @@
+{
+  "name": "caralays",
+  "version": "1.0.0",
+  "description": "Open-source playground for mastering real-time systems: WebSockets, Socket.IO, WebRTC, STUN/TURN, SDP, ICE, presence, messaging, media streaming, and scalable communication architectures",
+  "homepage": "https://github.com/xnacro/Caralays#readme",
+  "bugs": {
+    "url": "https://github.com/xnacro/Caralays/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnacro/Caralays.git"
+  },
+  "license": "ISC",
+  "author": "Prince Tiwari",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

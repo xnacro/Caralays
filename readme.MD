@@ -1,0 +1,1 @@
+Open-source playground for mastering real-time systems: WebSockets, Socket.IO, WebRTC, STUN/TURN, SDP, ICE, presence, messaging, media streaming, and scalable communication architectures
