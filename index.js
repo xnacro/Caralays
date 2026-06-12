@@ -1,12 +1,16 @@
 const express = require("express");
 const app = express();
 const dotEnv = require("dotenv");
+const path = require("path");
 const http = require("http");
 const WebSocket = require("ws");
 dotEnv.config();
 
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 app.get("/", (req, res) => {
-    res.send("Hello World");
+    res.render("index.ejs");
 });
 
 const server = http.createServer(app);
