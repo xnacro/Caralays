@@ -1,10 +1,21 @@
 const express = require("express");
 const app = express();
-const dotEnv = require("dotenv");
+const env = require("dotenv");
+env.config();
+
 const path = require("path");
 const http = require("http");
 const WebSocket = require("ws");
-dotEnv.config();
+
+// routes 
+const authRoutes = require("./routes/authRoute");
+
+
+// middleware   
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use("/auth", authRoutes);
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -30,7 +41,7 @@ wss.on("connection", (ws) => {
     });
 });
 
-port = process.env.PORT;
+const port = process.env.PORT;
 server.listen(port, () => {
    console.log(`HTTP + WebSocket server running on port ${port}`);
 });
