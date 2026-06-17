@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
 
     try {
         // check if user exists
-        const existingUser = await User.findbyUser(username);
+        const existingUser = await User.findByUser(username);
         if(existingUser) {
             return res.status(400).json({
                 success: false,
