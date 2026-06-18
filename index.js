@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const env = require("dotenv");
+const cookieParser = require("cookie-parser");
 env.config();
 
 const path = require("path");
@@ -14,6 +15,7 @@ const authRoutes = require("./routes/authRoute");
 // middleware   
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 app.use("/auth", authRoutes);
 
 
