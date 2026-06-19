@@ -117,3 +117,26 @@ exports.login = async (req, res) => {
         });
     }
 };
+
+exports.logout = async (req, res) => {
+    try {
+        // Clear the JWT cookie by setting it to an empty value and expiring it immediately
+        res.cookie("jwt", " ", {
+            httpOnly: true,
+            expire: new Date(0)
+        });
+       // removing header authorization token from the local storage
+        res.status(200).json({
+            success: true,
+            message: "Logout successful"
+        });
+        
+    } catch (error) {
+        console.error("Error in logout:", error);
+        res.status(500).json({
+            success: false,
+            message: "Server error"
+        });
+    }
+
+}
